@@ -35,9 +35,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Print VARIABLE_KEY from environment
-        run: |
-          echo "::add-mask::$VARIABLE_KEY"
-          echo "VARIABLE_KEY is: $VARIABLE_KEY"
-        env:
-          VARIABLE_KEY: ${{ secrets.VARIABLE_KEY }}
