@@ -38,4 +38,6 @@ jobs:
           echo test, and deploy your project.
 
       - name: Print a secret
-        run: echo ${{ secrets.SECRET_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SECRET_KEY }}"
