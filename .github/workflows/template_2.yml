@@ -18,6 +18,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    environment: local
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -37,9 +38,14 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Print a secret
+      - name: Print SECRET_KEY from env:dev
         run: |
-          echo "::add-mask::${{ secrets.SECRET_KEY }}"
-          echo "SECRET_KEY=$SECRET_KEY"
+          echo "::add-mask::$SECRET_KEY"
+          echo "Secret is: $SECRET_KEY"
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
+      - name: Print custom env var
+        run: echo "VARIABLE_KEY is: $VARIABLE_KEY"
+        env:
+          VARIABLE_KEY: HelloWorld
