@@ -27,13 +27,9 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Prints the files in the path
+      # Prints the files in the path - To verify that the repo is checked out
       - name: Print the files in the path
         run: ls
-      
-      # Prints the files in the path
-      - name: Print the files in the path
-        run: dir
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
