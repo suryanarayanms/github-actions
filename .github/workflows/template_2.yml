@@ -44,6 +44,7 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
       - name: Print custom env var
-        run: echo "VARIABLE_KEY is: $VARIABLE_KEY"
+        run: |
+          echo "VARIABLE_KEY is: $VARIABLE_KEY"
         env:
           VARIABLE_KEY: HelloWorld
