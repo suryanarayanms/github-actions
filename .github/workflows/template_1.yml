@@ -1,0 +1,17 @@
+name: 
+  Template 1
+
+on: 
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  printing-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Print Hello World
+          run: echo "Hello world"
