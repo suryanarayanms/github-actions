@@ -35,16 +35,3 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-
-      - name: Print SECRET_KEY from env:dev
-        run: |
-          echo "::add-mask::$SECRET_KEY"
-          echo "Secret is: $SECRET_KEY"
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-
-      - name: Print custom env var
-        run: |
-          echo "VARIABLE_KEY is: $VARIABLE_KEY"
-        env:
-          VARIABLE_KEY: HelloWorld
