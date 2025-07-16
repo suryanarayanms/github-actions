@@ -39,5 +39,7 @@ jobs:
 
       - name: Print a secret
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SECRET_KEY }}"
+          echo "::add-mask::${{ secrets.SECRET_KEY }}"
+          echo "SECRET_KEY=$SECRET_KEY"
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
