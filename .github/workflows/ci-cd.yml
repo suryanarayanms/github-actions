@@ -16,13 +16,13 @@ jobs:
         java-version: '17'
     
     - name: Build
-    - run: ./gradlew bootJar
+      run: ./gradlew bootJar
 
     - name: Docker login
-    - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Build Docker image
-    - run: docker build -t ${{ secrets.DOCKER_USERNAME }}/prep-app:latest .
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/prep-app:latest .
 
     - name: Push Docker image
-    - run: docker push ${{ secrets.DOCKER_USERNAME }}/prep-app:latest
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/prep-app:latest
